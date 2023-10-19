@@ -1,0 +1,17 @@
+sympto% Define the diet recommendations based on diseases
+diet_recommendation(hypertension, [low_salt, high_potassium, low_fat]).
+diet_recommendation(diabetes, [low_carbohydrate, balanced_protein, high_fiber]).
+
+% Rules to suggest a diet based on a given disease
+suggest_diet(Disease, Diet) :- diet_recommendation(Disease, Diet), !.
+suggest_diet(_, [general_balanced_diet]).
+
+% Example usage
+% To get a diet recommendation for hypertension:
+% ?- suggest_diet(hypertension, Diet).
+%
+% To get a diet recommendation for diabetes:
+% ?- suggest_diet(diabetes, Diet).
+%
+% To get a general diet recommendation:
+% ?- suggest_diet(unknown_disease, Diet).
